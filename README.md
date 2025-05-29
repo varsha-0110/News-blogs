@@ -18,8 +18,8 @@ A modern news and blog platform built with React and Express, powered by the GNe
 
 ### 🚀 Live Demo
 
-Frontend: [https://your-frontend-url.vercel.app](https://your-frontend-url.vercel.app)
-Backend: [https://your-backend-url.onrender.com](https://news-blogs-1.onrender.com)
+Frontend: [https://frontend-url.vercel.app](https://your-frontend-url.vercel.app)
+Backend: [https://backend-url.onrender.com](https://news-blogs-1.onrender.com)
 
 ---
 
