@@ -80,9 +80,11 @@ news-blogs-app/
 │   ├── index.js
 │   └── .env
 │
-├── src/                  # React frontend
+├── src/
+|   ├── assets/                  # React frontend
 │   ├── components/
-│   ├── pages/
+│   ├── main.jsx
+|   ├── index.css
 │   └── App.jsx
 │
 ├── public/
