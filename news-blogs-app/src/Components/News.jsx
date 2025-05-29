@@ -35,38 +35,36 @@ const News = ({ onShowBlogs, blogs, onEditBlog, onDeleteBlog }) => {
   const [showBlogModel, setShowBlogModel] = useState(false);
 
   useEffect(() => {
-    const fetchNews = async () => {
-
-    let url = `http://localhost:5000/api/news?category=${selectedCategory}`;
+  const fetchNews = async () => {
+    let url = `https://news-blogs-1.onrender.com/api/news?category=${selectedCategory}`;
 
     if (searchQuery) {
-        url = `http://localhost:5000/api/news?q=${searchQuery}`;
+      url = `https://news-blogs-1.onrender.com/api/news?q=${searchQuery}`;
     }
 
+    try {
+      const response = await axios.get(url);
+      const fetchedNews = response.data.articles;
 
+      // Assign default image if missing
+      fetchedNews.forEach(article => {
+        if (!article.image) {
+          article.image = noImg;
+        }
+      });
 
-      try {
-        const response = await axios.get(url);
-        const fetchedNews = response.data.articles;
+      setHeadline(fetchedNews[0] || null);
+      setNews(fetchedNews.slice(1, 7));
 
-        // Assign default image if missing
-        fetchedNews.forEach(article => {
-          if (!article.image) {
-            article.image = noImg;
-          }
-        });
+      const storedBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+      setBookmarks(storedBookmarks);
+    } catch (error) {
+      console.error('Error fetching news:', error);
+    }
+  };
 
-        setHeadline(fetchedNews[0] || null);
-        setNews(fetchedNews.slice(1, 7));
-
-        const storedBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
-        setBookmarks(storedBookmarks);
-      } catch (error) {
-        console.error('Error fetching news:', error);
-      }
-    };
-    fetchNews();
-  }, [selectedCategory, searchQuery]);
+  fetchNews();
+}, [selectedCategory, searchQuery]);
 
   const handleCategoryChange = (e, category) => {
     e.preventDefault();
