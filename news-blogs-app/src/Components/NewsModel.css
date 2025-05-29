@@ -1,0 +1,52 @@
+.model-image {
+    width: 100%;
+    height: auto;
+    max-height: 27rem;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.model-title {
+    font-size: 3rem;
+    color: #fff;
+    letter-spacing: 0.1rem;
+    margin-top: 1rem;
+    font-family: 'Caveat', sans-serif;
+}
+
+.model-source,
+.model-date{
+    font-size: 1.5rem;
+    color: #bbb;
+    margin-top: 0.5rem;
+}
+
+.model-content-text {
+    font-size: 1.9rem;
+    margin-top: 1.5rem;
+    line-height: 2.1rem;
+    color: #ddd;
+}
+
+.read-more-link {
+    width: 15rem;
+    display: inline-block;
+    background: linear-gradient(to right, #b88efc, #6877f4);
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    color: #fff;
+    border-radius: 5rem;
+    font-size: 1.4rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    transition: transform 0.1s ease-in-out;
+}
+
+.read-more-link:active {
+    transform: translateY(0.1rem);
+}
+
+
